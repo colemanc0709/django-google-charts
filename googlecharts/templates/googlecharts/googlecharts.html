@@ -32,7 +32,8 @@
 			for (var j = 0; j < c.rows._cl.length; ++j) {
 				data.addColumn.apply(data, c.rows._cl[j]);
 			}
-			data.addRows(c.rows);
+            data.addRows(c.rows);
+            if (typeof c.options.container != "undefined") c.container = c.options.container;
 			c.container = document.getElementById(c.container);
 			var chart = new google.visualization[c.kind](c.container);
 			chart.draw(data, c.options);
